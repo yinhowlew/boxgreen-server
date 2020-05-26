@@ -5,24 +5,11 @@ const knex = require('knex');
 const productList = require('./controllers/productList.js');
 const productUpdate = require('./controllers/productUpdate.js');
 const isAdmin = require('./util.js')
+const { PRODUCTION_CONNECTION } = require('./config.js')
 
 const db = knex({
   client: 'pg',
-  // connection: {
-  //   host : '127.0.0.1',   // this means local host. we can change this later
-  //   user : 'yinhow', 
-  //   password : '',
-  //   database : 'boxgreen-db'  	
-  // }
-  connection: {
-  	host: 'boxgreen-db.cvlbedt8lqkc.us-east-2.rds.amazonaws.com',
-  	port: '5432',
-  	user: 'yinhowlew',
-  	password: 'Daisynguyen123',
-  	database: 'boxgreen'
-  	// connectionString: process.env.DATABASE_URL,
-  	// ssl: true
-  }
+  connection: PRODUCTION_CONNECTION
 });
 
 const app = express();

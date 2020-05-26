@@ -1,4 +1,4 @@
-const SECRET_ADMIN = "yinhowlew"
+const { SECRET_ADMIN } = require('./config.js')
 
 const isAdmin = (req, res, next) => {
 	const user = req.headers.authorization;
